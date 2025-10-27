@@ -18,7 +18,7 @@ setup_generic(){
     export OMP_NUM_THREADS=4
     export VLLM_IMAGE_FETCH_TIMEOUT=60
     export VLLM_ATTENTION_BACKEND='XFORMERS'
-    export HF_TOKEN='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' #CHNAGE THIS
+    export HF_TOKEN='' #CHNAGE THIS
     export HYDRA_FULL_ERROR=1
     export RAYON_NUM_THREADS=4
     export RUST_BACKTRACE=1
