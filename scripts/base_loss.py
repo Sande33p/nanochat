@@ -21,7 +21,7 @@ device_batch_size = 32
 split_tokens = 20*524288  # number of tokens to evaluate per split
 model_tag = None # optional model tag for the output directory name
 model_step = None # optional model step for the output directory name
-device_type = "" # cuda|cpu|mps (empty => autodetect)
+device_type = "cuda" # cuda|cpu|mps (empty => autodetect)
 exec(open(os.path.join('nanochat', 'configurator.py')).read()) # overrides from command line or config file
 
 # Load the base model and the tokenizer
