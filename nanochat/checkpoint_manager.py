@@ -21,15 +21,15 @@ def log0(message):
         logger.info(message)
 
 def save_checkpoint(checkpoint_dir, step, model_data, optimizer_data, meta_data):
-    assert int(os.environ.get('RANK', 0)) == 0 # prevent footguns for now
+    #assert int(os.environ.get('RANK', 0)) == 0 # prevent footguns for now
     os.makedirs(checkpoint_dir, exist_ok=True)
     # Save the model state (parameters)
-    model_path = os.path.join(checkpoint_dir, f"model_{step:06d}.pt")
+    model_path = os.path.join(checkpoint_dir, f"model.pt")
     torch.save(model_data, model_path)
     log0(f"Saved model file to: {model_path}")
     # Save the optimizer state (useful for SFT or any other fine-tuning)
     if optimizer_data is not None:
-        optimizer_path = os.path.join(checkpoint_dir, f"optim_{step:06d}.pt")
+        optimizer_path = os.path.join(checkpoint_dir, f"optim.pt")
         torch.save(optimizer_data, optimizer_path)
         log0(f"Saved optimizer file to: {optimizer_path}")
     # Save the metadata dict as json

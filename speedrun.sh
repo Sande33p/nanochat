@@ -38,7 +38,8 @@ if [ -z "$WANDB_RUN" ]; then
     # by default use "dummy" : it's handled as a special case, skips logging to wandb
     WANDB_RUN=dummy
 fi
-
+WANDB_RUN=nanochat
+WANDB_RUN=${WANDB_RUN}_$(date +%Y%m%d_%H%M%S)
 # -----------------------------------------------------------------------------
 # During the course of the run, we will be writing markdown reports to the report/
 # directory in the base dir. This command clears it out and writes a header section
